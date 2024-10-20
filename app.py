@@ -32,5 +32,6 @@ def get_one_task(id):
             return jsonify(t.to_dict())
     return jsonify({"message": "Não foi possível encontrar a task"}), 404
 
+
 if __name__ == "__main__":
     app.run(debug=True)
