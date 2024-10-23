@@ -17,4 +17,3 @@ def test_create_task():
     assert uuid.UUID(response_json["tasks"][index_task - 1]["id"])
     tasks.append(response_json["tasks"][index_task - 1]["id"])
     
-
