@@ -23,6 +23,8 @@ def create_task():
 def get_all_tasks():
     task_list = [task.to_dict() for task in tasks]
     output = {"tasks": task_list, "total_tasks": len(task_list)}
+    ## trecho abaixo criado para verificar último id criado
+    #print(output['tasks'][len(task_list) - 1]['id'])
     return jsonify(output),200
 
 @app.route("/tasks/<uuid:id>", methods=["GET"])
