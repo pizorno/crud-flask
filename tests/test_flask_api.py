@@ -12,9 +12,7 @@ def test_create_task():
     }
     response = requests.post(f"{BASE_URL}/tasks", json=new_task_data)
     assert response.status_code == 201
-    #response = requests.get(f"{BASE_URL}/tasks").json()
     response_json = requests.get(f"{BASE_URL}/tasks").json()
-    #response_json = response.json()
     index_task = int(response_json["total_tasks"])
     assert uuid.UUID(response_json['tasks'][index_task - 1]['id'])
     tasks.append(response_json['tasks'][index_task - 1]['id'])
