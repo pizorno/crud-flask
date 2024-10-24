@@ -9,9 +9,7 @@ def test_create_task():
         "title": "Mova tarefa - teste",
         "description": "Descrição nova tarefa - teste"
     }
-    assert requests.post(
-        f"{BASE_URL}/tasks",json=task_data
-    ).status_code == 201
+    assert requests.post(f"{BASE_URL}/tasks",json=task_data).status_code == 201
     response_json = requests.get(f"{BASE_URL}/tasks").json()
     index_task = int(response_json["total_tasks"])
     assert uuid.UUID(response_json["tasks"][index_task - 1]["id"])
