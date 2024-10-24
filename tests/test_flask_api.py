@@ -41,5 +41,7 @@ def test_update_task():
 
 def test_delete_task():
     if tasks:
-        assert requests.delete(f"{BASE_URL}/tasks/{tasks[0]}").status_code == 200
+        assert requests.delete(
+            f"{BASE_URL}/tasks/{tasks[0]}"
+        ).status_code == 200
         assert tasks not in requests.get(f"{BASE_URL}/tasks")
